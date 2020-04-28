@@ -1,0 +1,21 @@
+/*As cores podem ser colocadas de 4 formas diferentes na folha de estilos (style):
+1. Nome da cor;
+2. Valores rgb/rgba (red, green, blue, alpha);
+    Alpha varia entre 0 e 1, sendo 0 o maior nível de transparência e 1 o maior nível de opacidade.
+3. Código hexadecimal.
+4. Valores hsl/hsla (Matiz, Saturação, Luminosidade, Alpha)
+*/
+
+body {
+    background-color: darkgray;
+    color: rgba(0,0,0,0.5);
+}
+
+h1 {
+    color: #e72b2b;
+}
+
+p {
+    color: hsl(0,80,12);
+}
+
