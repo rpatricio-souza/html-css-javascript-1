@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+section#conteudo{
+    width: 1000px;
+    margin: auto;
+}
+
+iframe#frame-spec{
+    border: none;
+    height: 280px;
+    width: 380px;
+    overflow: hidden;/*Essa configuração precisa ser no google-glass.html para funcionar*/
+}
+/*Ocultar a barra de rolagem no Chrome*/
+iframe#frame-spec::-webkit-scrollbar{
+    display: none;
+}
