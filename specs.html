@@ -6,6 +6,7 @@
         <title>Google Glass</title>
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
         <link rel="stylesheet" type="text/css" href="_css/specs.css">
+        <script language="javascript" src="_javascript/funcoes.js"></script>
     </head>
 
     <script language="javascript" src="_javascript/funcoes.js"></script>
@@ -48,7 +49,20 @@
                     <p>Clique em qualquer área destacada da imagem para ter mais informações sobre os recursos do Google Glass. Qualquer ponto vermelho vai te levar a um lugar cheio de novas informações.</p>
 
                     <section id="conteudo">
-                        <img src="_imagens/glass-esquema-marcado.jpg">
+                        <img src="_imagens/glass-esquema-marcado.jpg" usemap="#meumapa">
+                        <map name="meumapa">
+                            <!-- Clique-->
+                            <area shape="poly" coords="184,255,182,219,266,207,266,243" href="google-glass.html#tela" target="janela">
+                            <area shape="circle" coords="158,243,10.5" href="google-glass.html#camera" target="janela">
+                            <area shape="circle" coords="76,51,10.5" href="google-glass.html#gadgets" target="janela">
+                            <area shape="poly" coords="28,143,83,216,84,249,27,169" href="google-glass.html#sensores" target="janela">
+                            <!-- Passar o mouse
+                            <area shape="poly" coords="184,255,182,219,266,207,266,243" href="google-glass.html#tela" onmouseover="mudaIframe('google-glass.html#tela')" onmouseout="mudaIframe('google-glass.html#topo')" target="janela">
+                            <area shape="circle" coords="158,243,10.5" onmouseover="mudaIframe('google-glass.html#camera')" onmouseout="mudaIframe('google-glass.html#topo')" target="janela">
+                            <area shape="circle" coords="76,51,10.5" onmouseover="mudaIframe('google-glass.html#gadgets')" onmouseout="mudaIframe('google-glass.html#topo')" target="janela">
+                            <area shape="poly" coords="28,143,83,216,84,249,27,169" onmouseover="mudaIframe('google-glass.html#sensores')" onmouseout="mudaIframe('google-glass.html#topo')" target="janela">
+                            -->
+                        </map>
                         <iframe src="google-glass.html" name="janela" id="frame-spec"></iframe>
                     </section>
                     

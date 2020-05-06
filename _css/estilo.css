@@ -66,6 +66,8 @@ header#cabecalho img#icone {
     position: absolute;
     left: 750px;
     top: 40px;
+    /*display: block;
+    float: right;*/
 }
 
 

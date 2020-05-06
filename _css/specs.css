@@ -7,8 +7,8 @@ section#conteudo{
 
 iframe#frame-spec{
     border: none;
+    width: 400px;
     height: 280px;
-    width: 380px;
     overflow: hidden;/*Essa configuração precisa ser no google-glass.html para funcionar*/
 }
 /*Ocultar a barra de rolagem no Chrome*/
