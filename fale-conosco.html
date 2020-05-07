@@ -1,47 +1,128 @@
-Google Glass
-A revolução do Google está chegando
+<!DOCTYPE html>
+<html lang="en">
 
-[AQUI ENTRA UMA FOTO]
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Multimídia</title>
+        <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="_css/form.css">
+        <script language="javascript" src="_javascript/funcoes.js"></script>
+    </head>
 
-Menu Principal
-- Home
-- Especificações
-- Fotos
-- Multimídia
-- Fale conosco
+    <body>
+        <div id="interface">
 
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
+            <header id="cabecalho">
+                <hgroup>
+                    <h1>Google Glass</h1>
+                    <h2>A revolução do Google está chegando</h2>
+                </hgroup>
 
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
+                <img id="icone" src="_imagens/contato.png">
+                <!--nav: Área de navegação dentro do site-->
+                <nav id="menu">
+                    <h1>Menu Principal</h1>
+                    <ul type="circle">
+                        <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                        <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                        <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                        <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                        <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
+            <section id="corpo-full">
+                <article id="noticia-principal">
+                    <header id="cabecalho-artigo">
+                        <hgroup>
+                            <!--&nbsp; (Non-Breaking Space/Espaço sem quebra): equivale a 1 espaço.-->
+                            <h3>Fale Conosco > &nbsp; Contato</h3>
+                            <h1>Formulário de Contato</h1>
+                            <h2>por Gustavo Guanabara</h2>
+                            <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+                        </hgroup>
+                    </header>
+                </article>
+            </section>
 
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
+            <form>
+                <fieldset id="usuario"><legend>Identificação do Usuário</legend>
+                    <p><label for="campo-nome">Nome:</label> <input type="text" name="texto-nome" id="campo-nome" size="50" maxlength="50" placeholder="Nome completo"></p>
+                    <!--label: relaciona com o id do objeto, permitindo que ele seja selecionado ao clicar sobre seu nome também-->
+                    <p><label for="campo-senha">Senha:</label> <input type="password" name="texto-senha" id="campo-senha" minlength="8" maxlength="20" placeholder="de 8 a 20 caracteres"></p>
+                    <p><label for="campo-email">E-mail:</label> <input type="email" name="texto-email" id="campo-email" size="50" placeholder="nome@dominio.com"></p>
+                    <fieldset id="sexo"><legend>Sexo:</legend>
+                        <!--Os objetos radio precisam ter o mesmo nome, senão será possível selecionar todos, mas não será possível desmarca-los depois-->
+                            <input type="radio" name="texto-sexo" id="campo-masc"><label for="campo-masc">Masculino</label><br>
+                            <input type="radio" name="texto-sexo" id="campo-fem"><label for="campo-fem">Feminino</label>
+                            <!--checked: Um input com esse atributo faz com que o objeto já venha marcado-->
+                    </fieldset>
+                    <p><label for="campo-nasc">Data de Nascimento:</label> <input type="date" name="data-nasc" id="campo-nasc"></p>
+                </fieldset>
+                <fieldset id="endereco"><legend>Endereço do Usuário</legend>
+                    <p><label for="campo-logradouro">Logradouro:</label> <input type="text" name="texto-logradouro" id="campo-logradouro" size="50" placeholder="Rua/Av./Trav./..."></p>
+                    <p><label for="campo-numero">Número:</label> <input type="number" name="texto-numero" id="campo-numero" min="0" max="99999"></p>
+                    <p><label for="campo-complemento">Complemento:</label> <input type="text" name="texto-complemento" id="campo-complemento" placeholder="casa/fundos/apt 30"></p>
+                    <p><label for="campo-estado">Estado:</label>
+                         <select name="texto-estado" id="campo-estado">
+                            <option value="null">---</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </p>
+                    <p><label for="campo-cidade">Cidade: <input type="text" name="texto-cidade" id="campo-cidade" size="50"></label></p>
+                </fieldset>
+                <fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+                    <p>Grau de Urgência:
+                         <select name="texto-urgencia" id="campo-urgencia">
+                            <option value="null">---</option>
+                        </select>
+                    </p>
+                    <p><label for="campo-msg">Mensagem:</label> <input type="" name="texto-msg" id="campo-msg"></p>
+                </fieldset>
+                <fieldset id="pedido"><legend>Quero um Google Glass</legend>
+                    <p><input type="checkbox" name="texto-quero" id="campo-quero"> <label for="campo-quero">Gostaria de adquirir um Google Glass quando disponível.</label></p>
+                    <p>Cor:
+                        <select name="texto-cor" id="campo-cor">
+                            <option value="null">---</option>
+                        </select>
+                    </p>
+                    <p><label for="campo-qtd">Quantidade:</label> <input type="number" name="texto-qtd" id="campo-qtd" min="0" max="99"></p>
+                </fieldset>
+                <p><input type="submit"></p>
+            </form>
 
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
-
-
-[BOTÃO ENVIAR]
-
-Copyright 2013 - by Gustavo Guanabara
-Facebook | Twitter
+            <footer id="rodape">
+                <p>Copyright &copy; 2013 - by Gustavo Guanabara<br>
+                <a href="http://facebook.com/cursoemvideo" target="_blank">Facebook</a> | <a href="http://twitter.com/cursoemvideo" target="_blank">Twitter</a></p>
+            </footer>
+        </div>
+    </body>
+</html>
