@@ -47,16 +47,16 @@
                 </article>
             </section>
 
-            <form method="post" id="fcontato" action="mailto:"><!--mailto só funcionará se tiver um cliente de e-mail configurado no PC, como o Outlook, por exemplo.-->
+            <form method="post" id="fcontato" action="mailto:" oninput="calcTotal()"><!--mailto só funcionará se tiver um cliente de e-mail configurado no PC, como o Outlook, por exemplo.-->
                 <!--Métodos
                     get: rápido, mas sem segurança.
                     post: lento e com um pouco de segurança. Recomendável o uso para formulários mais volumosos, que contenham senhas, etc.
                 -->
                 <fieldset id="usuario"><legend>Identificação do Usuário</legend>
-                    <p><label for="campo-nome">Nome:</label> <input type="text" name="texto-nome" id="campo-nome" size="50" maxlength="50" placeholder="Nome completo"></p>
+                    <p><label for="campo-nome">Nome:</label> <input type="text" name="texto-nome" id="campo-nome" size="20" maxlength="50" placeholder="Nome completo"></p>
                     <!--label: relaciona com o id do objeto, permitindo que ele seja selecionado ao clicar sobre seu nome também-->
-                    <p><label for="campo-senha">Senha:</label> <input type="password" name="texto-senha" id="campo-senha" minlength="8" maxlength="20" placeholder="de 8 a 20 caracteres"></p>
-                    <p><label for="campo-email">E-mail:</label> <input type="email" name="texto-email" id="campo-email" size="50" placeholder="nome@dominio.com"></p>
+                    <p><label for="campo-senha">Senha:</label> <input type="password" name="texto-senha" id="campo-senha" minlength="8" maxlength="20" size="20" placeholder="de 8 a 20 caracteres"></p>
+                    <p><label for="campo-email">E-mail:</label> <input type="email" name="texto-email" id="campo-email" size="20" placeholder="nome@dominio.com"></p>
                     <fieldset id="sexo"><legend>Sexo:</legend>
                         <!--Os objetos radio precisam ter o mesmo nome, senão será possível selecionar todos, mas não será possível desmarca-los depois-->
                             <input type="radio" name="texto-sexo" id="campo-masc"><label for="campo-masc">Masculino</label><br>
@@ -67,7 +67,7 @@
                 </fieldset>
 
                 <fieldset id="endereco"><legend>Endereço do Usuário</legend>
-                    <p><label for="campo-logradouro">Logradouro:</label> <input type="text" name="texto-logradouro" id="campo-logradouro" size="50" placeholder="Rua/Av./Trav./..."></p>
+                    <p><label for="campo-logradouro">Logradouro:</label> <input type="text" name="texto-logradouro" id="campo-logradouro" size="20" placeholder="Rua/Av./Trav./..."></p>
                     <p><label for="campo-numero">Número:</label> <input type="number" name="texto-numero" id="campo-numero" min="0" max="99999"></p>
                     <p><label for="campo-complemento">Complemento:</label> <input type="text" name="texto-complemento" id="campo-complemento" placeholder="casa/fundos/apt 30"></p>
                     <p><label for="campo-estado">Estado:</label>
@@ -102,7 +102,7 @@
                             <option value="TO">TO</option>
                         </select>
                     </p>
-                    <p><label for="campo-cidade">Cidade: <input type="text" name="texto-cidade" id="campo-cidade" size="50" list="cidades"></label></p>
+                    <p><label for="campo-cidade">Cidade: <input type="text" name="texto-cidade" id="campo-cidade" size="20" list="cidades"></label></p>
                     <datalist id="cidades">
                         <option value="São Paulo"></option>
                         <option value="Jacareí"></option>
@@ -113,13 +113,14 @@
 
                 <fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
                     <p><label for="campo-urgencia">Grau de Urgência:</label> Mín<input type="range" name="texto-urgencia" id="campo-urgencia" min="1" max="4" step="1">Máx</p>
-                    <p><label for="campo-msg">Mensagem:</label> <textarea name="texto-msg" id="campo-msg" cols="50" rows="5" placeholder="Sua mensagem aqui..."></textarea></p>
+                    <p><label for="campo-msg">Mensagem:</label> <textarea name="texto-msg" id="campo-msg" cols="45" rows="5" placeholder="Sua mensagem aqui..."></textarea></p>
                 </fieldset>
 
                 <fieldset id="pedido"><legend>Quero um Google Glass</legend>
-                    <p><input type="checkbox" name="texto-quero" id="campo-quero"> <label for="campo-quero">Gostaria de adquirir um Google Glass quando disponível.</label></p>
-                    <p><label for="campo-cor">Cor:</label>
-                        <select name="texto-cor" id="campo-cor">
+                    <p><input type="checkbox" name="texto-quero" id="campo-quero" checked> <label for="campo-quero">Gostaria de adquirir um Google Glass quando disponível.</label></p>
+                    <p><label for="campo-cor">Cor:</label> <input type="color" name="texto-cor" id="campo-cor" value="#ffffff">
+                        <!--
+                            <select name="texto-cor" id="campo-cor">
                             <option value="null">---</option>
                             <optgroup label="Cores Primárias">
                                 <option>Amarelo</option>
@@ -127,11 +128,14 @@
                                 <option>Azul</option>
                             </optgroup>
                         </select>
+                        -->
                     </p>
                     <p><label for="campo-qtd">Quantidade:</label> <input type="number" name="texto-qtd" id="campo-qtd" min="0" max="99"></p>
+                    <p><label for="campo-total">Preço Total: R$</label> <input type="text" name="texto-total" id="campo-total" size="5" readonly placeholder="0,00"></p>
                 </fieldset>
 
-                <p><input type="submit"></p>
+                <!--<p><input type="submit"></p>-->
+                <p><input type="image" src="_imagens/botao-enviar.png" name="texto-botao-enviar" id="campo-botao-enviar"></p>
             </form>
 
             <footer id="rodape">
